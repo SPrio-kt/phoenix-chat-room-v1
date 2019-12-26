@@ -12,7 +12,10 @@ let WaterCooler = {
       let userName = document.getElementById('user-name').value
       let userMsg = document.getElementById('user-msg').value
 
-      channel.push('shout', {name: userName, body: userMsg})
+      var x=channel.push('ping',{})
+      console.log(x)
+      var y=channel.push('shout', {name: userName, body: userMsg})
+      console.log(y)
 
       document.getElementById('user-name').value = ''
       document.getElementById('user-msg').value = ''

@@ -2,10 +2,15 @@ defmodule ChatWeb.WaterCoolerChannel do
   use ChatWeb, :channel
 
   alias Chat.Chats
-  
+
   def join("water_cooler:lobby", _payload, socket) do
     {:ok, socket}
   end
+
+  def handle_in("ping", payload, socket) do
+    {:reply, {:ok, %{msg: "this is a test"}}, socket}
+  end
+
 
   # It is also common to receive messages from the client and
   # broadcast to everyone in the current topic (water_cooler:lobby).
